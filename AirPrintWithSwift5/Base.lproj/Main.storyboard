@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,54 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AirPrintWithSwift5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L46-C0-9TO">
+                                <rect key="frame" x="7" y="44" width="407" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6ig-5w-2aW"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="Rwh-aL-k72">
+                                        <barButtonItem key="rightBarButtonItem" title="Printer" id="sg5-FI-bzM">
+                                            <connections>
+                                                <action selector="takePrintWithSender:" destination="BYZ-38-t0r" id="2Q4-5S-GO9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UGd-NI-pbV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">iOS is a mobile operating system, developed by Apple Inc. for iPhone, iPad, iPod Touch, and HomePod. Updates for iOS are released through the iTunes software and, since iOS 5, via over-the-air software updates. With the announcement of iOS 5 on June 6, 2011, a USB connection to iTunes was no longer needed to activate iOS devices; data synchronization can happen automatically and wirelessly through Apple's iCloud service. Major new iOS releases are announced yearly during the Apple Worldwide Developers Conference (WWDC), and are usually released in September of the same year, usually coinciding with the release of new iPhone models. On September 24, 2019, Apple rebranded the operating system for the iPad line to iPadOS. iPadOS is similar to iOS but has received a few tablet oriented features. The most recent stable release for iPhone and iPod Touch, iOS 13.3, was released on December 10, 2019. The most recent iOS beta release, iOS 13.3.1 beta 2, was released on January 14, 2020.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UGd-NI-pbV" secondAttribute="bottom" id="Bjd-1h-MWL"/>
+                            <constraint firstItem="L46-C0-9TO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="7" id="Bwq-YY-Srm"/>
+                            <constraint firstItem="L46-C0-9TO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bTS-5H-O0P"/>
+                            <constraint firstItem="UGd-NI-pbV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hZz-US-dCp"/>
+                            <constraint firstAttribute="trailing" secondItem="L46-C0-9TO" secondAttribute="trailing" symbolic="YES" id="is0-lD-ymp"/>
+                            <constraint firstItem="UGd-NI-pbV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="r2K-Q2-Wpf"/>
+                            <constraint firstItem="UGd-NI-pbV" firstAttribute="top" secondItem="L46-C0-9TO" secondAttribute="bottom" symbolic="YES" id="zje-Bb-uWm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="UGd-NI-pbV" id="rot-mH-v9a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
